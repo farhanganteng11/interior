@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: #d97706;
+        --color-dark: #1c1917;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        font-weight: 300;
+    }
+
+    .font-display {
+        font-family: "Cormorant Garamond", serif;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-amber-600 text-white px-8 py-3 text-sm font-medium tracking-widest uppercase hover:bg-amber-700 transition-colors inline-block;
+    }
+
+    .btn-primary-lg {
+        @apply bg-amber-600 text-white px-10 py-4 text-sm font-medium tracking-widest uppercase hover:bg-amber-700 transition-colors inline-block;
+    }
+
+    .btn-outline-lg {
+        @apply border border-white text-white px-10 py-4 text-sm font-medium tracking-widest uppercase hover:bg-white hover:text-stone-900 transition-colors inline-block;
+    }
+
+    .nav-link {
+        @apply text-current hover:text-amber-600 relative;
+    }
+
+    .nav-link::after {
+        content: "";
+        @apply absolute -bottom-1 left-0 w-0 h-px bg-amber-600 transition-all duration-300;
+    }
+
+    .nav-link:hover::after {
+        @apply w-full;
+    }
+}
+
+/* Navbar scroll effect */
+.navbar {
+    @apply bg-transparent;
+}
+.navbar.scrolled {
+    @apply bg-white shadow-sm;
+}
+.navbar.scrolled .nav-link {
+    @apply text-stone-700;
+}
+
+/* Reveal animation */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: revealUp 0.8s ease forwards;
+}
+
+@keyframes revealUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Project card hover */
+.project-card {
+    @apply transition-all duration-300;
+}
