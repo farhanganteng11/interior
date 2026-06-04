@@ -32,8 +32,11 @@
     }
 
     .btn-outline-lg {
-        @apply border border-white text-white px-10 py-4 text-sm font-medium tracking-widest uppercase hover:bg-white hover:text-stone-900 transition-colors inline-block;
-    }
+        border: 1px solid white;
+        color: white;
+        padding: 1rem 2.5rem;
+        display: inline-block;
+    }   
 
     .nav-link {
         @apply text-current hover:text-amber-600 relative;
