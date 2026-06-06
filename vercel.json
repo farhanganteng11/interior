@@ -10,14 +10,14 @@
         {
             "src": "/build/(.*)",
             "dest": "/public/build/$1"
-        },
-        {
+       },
+       {
             "src": "/(css|js|images)/(.*)",
             "dest": "/public/$1/$2"
-        },
-        {
+       },
+       {
             "src": "/(.*)",
             "dest": "/api/index.php"
-        }
+       }
     ]
 }
