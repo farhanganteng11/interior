@@ -3,7 +3,7 @@
     "framework": null,
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@8.2"
+            "runtime": "vercel-wp-runtime@1.0.0"
         }
     },
     "routes": [
