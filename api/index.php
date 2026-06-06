@@ -1,18 +1,11 @@
 <?php
 
-// 1. Paksa semua folder storage Laravel pindah ke /tmp biar gak read-only
-$storagePath = '/tmp/storage';
-if (!is_dir($storagePath)) {
-    mkdir($storagePath . '/framework/views', 0755, true);
-    mkdir($storagePath . '/framework/cache', 0755, true);
-    mkdir($storagePath . '/framework/sessions', 0755, true);
-    mkdir($storagePath . '/bootstrap/cache', 0755, true);
+// 1. Mindahin folder compile views ke /tmp khusus buat Vercel biar gak Error 500
+$compiledViews = '/tmp/storage/framework/views';
+if (!is_dir($compiledViews)) {
+    mkdir($compiledViews, 0755, true);
 }
+putenv("VIEW_COMPILED_PATH={$compiledViews}");
 
-// 2. Set path storage & view compile secara paksa lewat core PHP
-putenv('APP_STORAGE=/tmp/storage');
-putenv('VIEW_COMPILED_PATH=/tmp/storage/framework/views');
-$_ENV['VIEW_COMPILED_PATH'] = '/tmp/storage/framework/views';
-
-// 3. Panggil index Laravel asli
+// 2. Eksekusi Laravel index yang asli
 require __DIR__ . '/../public/index.php';
