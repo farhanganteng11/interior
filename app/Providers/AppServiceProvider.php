@@ -11,7 +11,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Supaya Laravel tidak eror read-only saat berjalan di Vercel
+        if (isset($_SERVER['VERCEL_BACKGROUND_WORKER'])) {
+            app()->useStoragePath('/tmp/storage');
+        }
     }
 
     /**
