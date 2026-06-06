@@ -10,14 +10,5 @@
     ],
     "public": true,
     "buildCommand": "vite build",
-    "outputDirectory": "public",
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://interior-marsha.vercel.app",
-        "APP_KEY": "base64:Hfj2QiJ9Ajl1pFHkEjMS58PHRlRWnfvT7XCvTDoA3oE=",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie",
-        "CACHE_STORE": "array"
-    }
+    "outputDirectory": "public"
 }
